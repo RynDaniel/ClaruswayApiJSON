@@ -1,0 +1,32 @@
+<html>
+
+<head>
+  <title>CLARUSWAY</title>
+  <!-- Include CSS File Here -->
+  <link rel="stylesheet" href="css/main.css" />
+  <!-- Include JS File Here -->
+  <script src="js/aes.js"></script>
+  <script src="js/Extentions.js"></script>
+  <script src="js/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="main">
+      <center><img height="100px" width="100px"
+          src="https://secure.meetupstatic.com/photos/event/3/1/b/9/600_488352729.jpeg"></center>
+      <h2>Clarusway Register Page</h2>
+      <form id="form_id" method="post" name="myform">
+        <label>Email :</label>
+        <input type="text" name="email" id="email" />
+        <label>Password :</label>
+        <input type="password" name="password" id="password" />
+        <input type="button" value="Register" id="submit" onclick="apiRegister()" />
+      </form>
+    </div>
+  </div>
+</body>
+<script src="signup.js"></script>
+</html>

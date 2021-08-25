@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="tr">
+
+<head>
+    <title>UserList Page</title>
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html;charset=iso-8859-9">
+    <meta http-equiv="Content-language" content="tr">
+
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport"
+        content=" width=device-width,initial-scale=1, viewport-fit=cover,maximum-scale=1.0, user-scalable=0">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+
+    <script src="js/jquery-3.3.1.slim.min.js"></script>
+    <script src="js/aes.js"></script>
+    <script src="js/Extentions.js"></script>
+    <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <!--<script src="cordova.js"></script>-->
+    <style>
+        td{
+            text-align: center;
+        }
+        #loading{
+            position: absolute;
+            top: 40%;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            z-index: 9999999;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="pageHeader" style="margin-bottom: 0px;">USER LIST</div>
+
+    <div class="container" id="MainDiv">
+        <table id="example" class="display" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Avatar</th>
+                    <th>Id</th>
+                    <th>Email</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                </tr>
+            </thead>
+            <tbody id="tbodyUserList"></tbody>
+        </table>
+        <div id="loading" style="display: none;">
+            <center>
+                <img src="img/loading.gif">
+            </center>
+        </div>
+    </div>
+   
+</body>
+<script src="userList.js"></script>
+
+</html>
