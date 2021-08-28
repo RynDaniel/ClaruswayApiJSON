@@ -7,9 +7,26 @@ const apiRegister = async() => {
         .then(response =>response.json())
         .then(response =>{
             if(response.data[0].id != "0"){
-                console.log(data);
-                alert("Welcome " + email.split("@")[0]);
-                sessionStorage.setItem("token", data.token);
+                for(let i = 0; i<response.data.length; i++){
+                    $("#tbodyUserList").append(`
+                    <tr>
+                            <td>
+                            <img src=""/>
+                            </td>
+                            <td>
+                            
+                            </td>
+                            <td>
+                            
+                            </td>
+                            <td>
+                            
+                            </td>
+                            <td>
+                            
+                            </td>
+                     </tr>`)
+                }
 
             }
         })
