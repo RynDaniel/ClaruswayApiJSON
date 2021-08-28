@@ -29,31 +29,79 @@ const fillFormInput = () => {
 //     }
 // }
 
+// const apiRegister = async() => {
+//     let email = document.getElementById("email").value;
+//     let password = document.getElementById("password").value;
+//        const bodyData = {
+//         email : email,
+//         password : password
+//     }
+//     console.log(bodyData);
+//     console.log(JSON.stringify(bodyData));
+
+//     await fetch("https://reqres.in/api/register", {
+//         method:"POST",
+//         headers:{
+//             "Content-Type" : 'application/json'},
+//         body:  JSON.stringify(bodyData)  
+//         })
+//         .then(response =>response.json())
+//         .then(data =>{
+//             if(data.id != "0"){
+//                 console.log(data);
+//                 alert("Welcome " + email.split("@")[0]);
+//                 sessionStorage.setItem("token", data.token);
+
+//             }
+//         })
+//         .catch((e)=> console.log(e))
+// }
+
+//fetch
+// const apiRegister = async() => {
+//     let email = document.getElementById("email").value;
+//     let password = document.getElementById("password").value;
+//        const bodyData = {
+//         email : email,
+//         password : password
+//     }
+//     console.log(bodyData);
+//     console.log(JSON.stringify(bodyData));
+
+//     await fetch("https://reqres.in/api/register", {
+//         method:"POST",
+//         headers:{
+//             "Content-Type" : 'application/json'},
+//         })
+//         .then(response =>response.json())
+//         .then(data =>{
+//             if(data.id != "0"){
+//                 console.log(data);
+//                 alert("Welcome " + email.split("@")[0]);
+//                 sessionStorage.setItem("token", data.token);
+
+//             }
+//         })
+//         .catch((e)=> console.log(e))
+// }
+
+//axios
 const apiRegister = async() => {
     let email = document.getElementById("email").value;
     let password = document.getElementById("password").value;
-       const bodyData = {
-        email : email,
-        password : password
+    //endpoint == url
+    const response = await axios({
+        url:'https://reqres.in/api/register',
+        method:'post',
+        data : {
+            email :email,
+            password:password
+        }
+    });
+
+    if(response.data.id != "0"){
+        console.log(response);
+        console.log(response.data);
+        window.location.href = "userList.html";
     }
-    console.log(bodyData);
-    console.log(JSON.stringify(bodyData));
-
-    await fetch("https://reqres.in/api/register", {
-        method:"POST",
-        headers:{
-            "Content-Type" : 'application/json'},
-        body:  JSON.stringify(bodyData)  
-        })
-        .then(response =>response.json())
-        .then(data =>{
-            if(data.id != "0"){
-                console.log(data);
-                alert("Welcome " + email.split("@")[0]);
-                sessionStorage.setItem("token", data.token);
-
-            }
-        })
-        .catch((e)=> console.log(e))
 }
-
