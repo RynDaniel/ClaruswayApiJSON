@@ -7,14 +7,6 @@ window.onload = () => {
     setTimeout(fillFormInput, 500);
 }
 
-const showLoading = () => {
-    loading.style.display = "block";
-}
-
-const removeLoading = () => {
-    loading.style.display = "none";
-}
-
 const fillFormInput = () => {
     email.value = "eve.holt@reqres.in";
     password.value = "pistol";
@@ -38,21 +30,26 @@ const apiRegister = async () => {
         url: "https://reqres.in/api/register",
         data: bodyData,
         method: "post"
-    })
-        .then(response => response.data)
-        .catch(error => {
-            alert(error);
-            removeLoading();
-        });
+    });
 
-    if (response.token == undefined) {
+    const { data } = response;
+    // .then(response => response.data)
+    // .catch(error => {
+    //     alert(error);
+    //     removeLoading();
+    // });
+
+    // console.log(response.data.token);
+    
+    console.log(data.token);
+
+    if (data.token == undefined) {
         alert("Undefined " + response.error);
         removeLoading();
     }
     else {
-        removeLoading();
-        localStorage.setItem("tokenKey", response.token);
-        localStorage.setItem("tokenKeyEncrypted", EncryptStringAES(response.token));
+        localStorage.setItem("tokenKey", data.token);
+        localStorage.setItem("tokenKeyEncrypted", EncryptStringAES(data.token));
         removeLoading();
         window.location.href = "userList.html";
     }

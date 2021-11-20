@@ -36,3 +36,11 @@ function DecryptStringAES(text) {
 
     }
 }
+
+const showLoading = () => {
+    loading.style.display = "block";
+}
+
+const removeLoading = () => {
+    loading.style.display = "none";
+}
